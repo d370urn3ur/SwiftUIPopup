@@ -12,8 +12,13 @@ public protocol PopupContentView: View {}
 
 public struct ErrorView: PopupContentView {
     
-    public var title: String? = nil
-    public var message: String? = nil
+    var title: String? = nil
+    var message: String? = nil
+    
+    public init(title: String? = nil, message: String? = nil) {
+        self.title = title
+        self.message = message
+    }
     
     public var body: some View {
         

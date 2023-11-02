@@ -8,14 +8,14 @@
 import Foundation
 import SwiftUI
 
-protocol PopupContentView: View {}
+public protocol PopupContentView: View {}
 
-struct ErrorView: PopupContentView {
+public struct ErrorView: PopupContentView {
     
-    var title: String? = nil
-    var message: String? = nil
+    public var title: String? = nil
+    public var message: String? = nil
     
-    var body: some View {
+    public var body: some View {
         
         VStack {
             

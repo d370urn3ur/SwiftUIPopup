@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct DisplayTime: RawRepresentable {
+public struct DisplayTime: RawRepresentable {
     
-    typealias RawValue = TimeInterval
+    public typealias RawValue = TimeInterval
     
-    var rawValue: TimeInterval
+    public var rawValue: TimeInterval
     
-    init(rawValue: TimeInterval) {
+    public init(rawValue: TimeInterval) {
         self.rawValue = rawValue
     }
     
-    static let short = DisplayTime(rawValue: 1.0)
-    static let long = DisplayTime(rawValue: 3.0)
-    static let indefinite = DisplayTime(rawValue: -1.0)
+    public static let short = DisplayTime(rawValue: 1.0)
+    public static let long = DisplayTime(rawValue: 3.0)
+    public static let indefinite = DisplayTime(rawValue: -1.0)
     
 }

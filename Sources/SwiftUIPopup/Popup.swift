@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-struct Popup<T: View>: ViewModifier {
+public struct Popup<T: View>: ViewModifier {
     
     @Binding
     private var isPresented: Bool
@@ -25,7 +25,7 @@ struct Popup<T: View>: ViewModifier {
     @State
     private var dragTranslation: CGSize = .zero
     
-    init(isPresented: Binding<Bool>, showsBlur: Bool = false, alignment: Alignment = .bottom, displayTime: DisplayTime = .long, @ViewBuilder content: () -> T) {
+    public init(isPresented: Binding<Bool>, showsBlur: Bool = false, alignment: Alignment = .bottom, displayTime: DisplayTime = .long, @ViewBuilder content: () -> T) {
         self._isPresented = isPresented
         self.showsBlur = showsBlur
         self.alignment = alignment
@@ -33,7 +33,7 @@ struct Popup<T: View>: ViewModifier {
         self.popup = content()
     }
     
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             .overlay(popupContent())
             .onChange(of: isPresented) { _ in
@@ -135,7 +135,7 @@ struct Popup<T: View>: ViewModifier {
     }
 }
 
-extension View {
+public extension View {
     
     func popup<T: View>(isPresented: Binding<Bool>, showsBlur: Bool = false, alignment: Alignment = .bottom, displayTime: DisplayTime = .long, @ViewBuilder content: () -> T) -> some View {
         return modifier(

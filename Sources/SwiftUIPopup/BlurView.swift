@@ -9,17 +9,17 @@ import Foundation
 import SwiftUI
 import UIKit
 
-struct BlurView: UIViewRepresentable {
+public struct BlurView: UIViewRepresentable {
     
-    typealias UIViewType = UIVisualEffectView
+    public typealias UIViewType = UIVisualEffectView
     
     let style: UIBlurEffect.Style
     
-    func makeUIView(context: Context) -> UIVisualEffectView {
+    public func makeUIView(context: Context) -> UIVisualEffectView {
         UIVisualEffectView(
             effect: UIBlurEffect(style: style)
         )
     }
     
-    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {}
+    public func updateUIView(_ uiView: UIVisualEffectView, context: Context) {}
 }
